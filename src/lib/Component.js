@@ -26,13 +26,13 @@ export default class Component extends React.Component {
     this.unsubscribe = Store.subscribe(this._update.bind(this));
   }
 
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
   shouldComponentUpdate(nextProps, nextState) {
     return !shallowEqual(this.props, nextProps) ||
            !shallowEqual(this.state, nextState);
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   _update(payload) { // eslint-disable-line
