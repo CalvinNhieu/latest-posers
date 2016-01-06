@@ -1,0 +1,13 @@
+.sticky_header {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #3C6A90;
+}
+
+.header_title {
+  color: #EEE;
+}
