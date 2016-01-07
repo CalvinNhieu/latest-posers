@@ -11,6 +11,39 @@ export default class PhotoGrid extends Component {
         <Thumbnail/>
         <Thumbnail/>
         <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
+        <Thumbnail/>
       </div>
     );
   }

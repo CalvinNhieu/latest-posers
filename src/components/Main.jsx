@@ -8,44 +8,26 @@ import getURLParameter from 'utils/helper';
 
 export default class Main extends Component {
 
-
   constructor(props) {
     super(props);
-    let igAuthCode = getURLParameter('code');
-    this.accessToken = '';
-    if (igAuthCode) {
-      this.authenticateIg(igAuthCode);
+    let accessToken = getURLParameter('access_token');
+    if (accessToken) {
+      this.accessToken = accessToken;
+      this.fetchPoserData();
     }
-  }
-
-  authenticateIg(code) {
-    let xhr = new XMLHttpRequest();
-    let data = 'code=' + code;
-    xhr.open('POST', encodeURI('http://server.kambashi.com:8080/ig_auth'));
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        console.log(xhr.responseText);
-        this.accessToken = xhr.responseText;
-        this.fetchPoserData();
-      }
-    };
-
-    xhr.send(data);
   }
 
   fetchPoserData() {
     let xhr = new XMLHttpRequest();
-    let data = 'access_token=' + this.accessToken;
 
-    xhr.open('POST', encodeURI('http://server.kambashi.com:8080/get_nofilter_images'));
+    xhr.open('GET', encodeURI('https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=' + this.accessToken));
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         console.log(xhr.responseText);
       }
     };
-    xhr.send(data);
+    xhr.send();
   }
 
   render() {
