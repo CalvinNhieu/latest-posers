@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Store from 'Store';
-import shallowEqual from 'utils/shallowEqual';
+import shallowEqual from 'utils/helper';
 
 /*
    The Base class of every React Component
