@@ -35,15 +35,15 @@ export default class Main extends Component {
 
   fetchPoserData() {
     let xhr = new XMLHttpRequest();
-
-    xhr.open('GET', encodeURI('https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=' + this.accessToken));
+    let data = 'access_token=' + this.accessToken;
+    xhr.open('POST', encodeURI('http://server.kambashi.com:8080/fetch'));
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         console.log(xhr.responseText);
       }
     };
-    xhr.send();
+    xhr.send(data);
   }
 
   render() {
@@ -52,7 +52,7 @@ export default class Main extends Component {
         <div>
           <Header title="Latest Posers"/>
           <PhotoGrid/>
-          <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=https://calvinnhieu.github.io/&response_type=token">Authorize</a>
+          <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=http://calvinnhieu.github.io/latest-posers&response_type=token&scope=public_content">Authorize</a>
         </div>
       </Provider>
     );
