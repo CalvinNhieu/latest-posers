@@ -1,20 +1,17 @@
-import { compose, createStore, applyMiddleware } from 'redux';
-import createLogger from 'redux-logger';
-import thunk from 'redux-thunk';
-import { fluxEnhancer } from 'redux-flux-store';
-import { createElement } from 'react';
+import {createStore} from 'redux';
 
-let logger = createLogger({
-  level: 'info',
-  duration: true
-});
+let placeholder = 'https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/12501980_172924093067888_955910836_n.jpg';
 
-let store = compose(
-  fluxEnhancer({
+function reducer(state = [], action) {
+  switch (action.type) {
+  case 'LOADED':
+    return action.data;
+  default:
+    return [placeholder, placeholder];
+  }
+}
 
-  }),
-  applyMiddleware(thunk, logger)
-)(createStore)();
+let store = createStore(reducer);
 
 window.__store__ = store;
 export default store;

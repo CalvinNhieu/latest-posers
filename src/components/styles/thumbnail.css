@@ -1,7 +1,12 @@
-.thumbnail {
+.container {
   width: 20vw;
   height: 20vw;
   display: inline-block;
   background-color: #7AA1C1;
   margin: 0.5vw;
+
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }

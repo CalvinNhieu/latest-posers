@@ -1,30 +1,28 @@
 import React from 'react';
+import {connect} from 'Store';
 import Component from 'Component';
 import Thumbnail from 'Thumbnail.jsx';
 import styles from './styles/photo_grid.css';
 
-export default class PhotoGrid extends Component {
+class PhotoGrid extends Component {
+  static propTypes = {
+    imageData: React.PropTypes.array
+  }
+
   // TODO: populate from data
   render() {
+    let thumbnails = this.props.imageData.map((data) =>
+      <Thumbnail imgSrc={data.images.standard_resolution.url}/>
+    );
+
     return (
       <div className={ styles.photo_grid }>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
-        <Thumbnail/>
+        {thumbnails}
       </div>
     );
   }
 }
+
+export default connect((state) => ({
+  imageData: state
+}))(PhotoGrid);
