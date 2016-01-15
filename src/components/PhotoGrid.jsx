@@ -12,7 +12,7 @@ class PhotoGrid extends Component {
   // TODO: populate from data
   render() {
     let thumbnails = this.props.imageData.map((data) =>
-      <Thumbnail imgSrc={data.images.standard_resolution.url}/>
+      <Thumbnail imgSrc={ data.images.standard_resolution.url } filter={ data.filter } user={ data.user.username } redirect={ data.link }/>
     );
 
     return (
