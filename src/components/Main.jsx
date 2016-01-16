@@ -5,7 +5,7 @@ import Store from 'Store';
 import _ from 'lodash';
 import Header from 'Header.jsx';
 import PhotoGrid from 'PhotoGrid.jsx';
-// import style from './styles/app.css';
+import style from './styles/app.css';
 
 export default class Main extends Component {
 

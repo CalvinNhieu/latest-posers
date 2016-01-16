@@ -2,7 +2,7 @@
 @media screen and (min-width: 751px) {
   .photo_grid {
     margin: 0 auto;
-    padding-top: 70px;
+    padding-top: 75px;
     width: 75vw;
   }
 }
@@ -10,8 +10,7 @@
 /* mobile styles */
 @media screen and (max-width: 750px) {
   .photo_grid {
-    margin: 0 auto;
     padding-top: 70px;
-    width: 71vw;
+    width: 100%;
   }
 }

@@ -5,17 +5,20 @@
     height: 70px;
     text-align: center;
     position: fixed;
+    display: table;
     top: 0px;
     left: 0px;
-    background-color: #FFAE23;
+    background-color: #427096;
     z-index: 9;
   }
 
   .header_title {
+    display: table-cell;
+    vertical-align: middle;
     color: #FFF;
     font-family: 'Raleway';
     font-weight: 100;
-    font-size: 22px;
+    font-size: 1.3em;
   }
 }
 
@@ -28,14 +31,17 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: #FFAE23;
+    background-color: #427096;
     z-index: 9;
+    display: table;
   }
 
   .header_title {
+    display: table-cell;
+    vertical-align: middle;
     color: #FFF;
     font-family: 'Raleway';
     font-weight: 100;
-    font-size: 22px;
+    font-size: 1.3em;
   }
 }
