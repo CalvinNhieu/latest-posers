@@ -14,27 +14,27 @@ export default class Thumbnail extends Component {
 
   constructor(props) {
     super(props);
-    this.redirect = this.props.redirect;
   }
 
   componentDidMount() {
     _.each(document.getElementsByClassName(styles.overlay), function(element) {
-      element.addEventListener('click', function() {
-        window.open(this.redirect, '_blank');
-      }.bind(this));
       element.addEventListener('mouseover', function() {
         element.style.opacity = 0.7;
       });
       element.addEventListener('mouseout', function() {
         element.style.opacity = 0;
       });
-    }.bind(this));
+    });
+  }
+
+  handleClick() {
+    window.open(this.props.redirect, '_blank');
   }
 
   render() {
     return (
       <div className={ styles.container }>
-        <div className={ styles.overlay }>
+        <div className={ styles.overlay } onClick={ this.handleClick.bind(this) } >
           <p className={ styles.label }> { this.props.filter.toUpperCase() }<br/><br/>{ this.props.user.toUpperCase() } </p>
         </div>
         <img className={ styles.image } src={ this.props.imgSrc } alt=""/>

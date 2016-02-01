@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding-top: 75px;
     width: 75vw;
+    text-align: left;
   }
 }
 
@@ -12,5 +13,6 @@
   .photo_grid {
     padding-top: 70px;
     width: 100%;
+    text-align: left;
   }
 }

@@ -9,12 +9,11 @@ class PhotoGrid extends Component {
     imageData: React.PropTypes.array
   }
 
-  // TODO: populate from data
   render() {
+    this.key = 0;
     let thumbnails = this.props.imageData.map((data) =>
-      <Thumbnail imgSrc={ data.images.standard_resolution.url } filter={ data.filter } user={ data.user.username } redirect={ data.link }/>
+      <Thumbnail key={ this.key++ } imgSrc={ data.images.standard_resolution.url } filter={ data.filter } user={ data.user.username } redirect={ data.link }/>
     );
-
     return (
       <div className={ styles.photo_grid }>
         {thumbnails}

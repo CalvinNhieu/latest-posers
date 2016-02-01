@@ -2,10 +2,9 @@ import React from 'react';
 import Component from 'Component';
 import { Provider } from 'react-redux';
 import Store from 'Store';
-import _ from 'lodash';
 import Header from 'Header.jsx';
 import PhotoGrid from 'PhotoGrid.jsx';
-import style from './styles/app.css';
+import styles from './styles/main.css';
 
 export default class Main extends Component {
 
@@ -38,7 +37,7 @@ export default class Main extends Component {
   fetchData() {
     let xhr = new XMLHttpRequest();
     let data = 'access_token=' + this.accessToken;
-    xhr.open('POST', encodeURI('http://server.kambashi.com:8080/fetch'));
+    xhr.open('POST', encodeURI('http://server.kambashi.com:3000/fetch'));
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -49,30 +48,15 @@ export default class Main extends Component {
           data: JSON.parse(xhr.responseText).data
         });
         this.pagination = JSON.parse(xhr.responseText).pagination;
-        this.loadImages();
       }
     };
     xhr.send(data);
   }
 
-  loadImages() {
-    if (Object.keys(this.media).length === 0) {
-      console.log('empty');
-      return;
-    }
-    _.each(this.media, function(m) {
-      console.log('IMAGE');
-      if (m.filter !== 'Normal') {
-        console.log('FAKE:' + m.filter);
-        console.log(m);
-      }
-    });
-  }
-
   render() {
     return (
       <Provider store={Store}>
-        <div>
+        <div className={ styles.main }>
           <Header title="Latest Posers"/>
           <PhotoGrid authorized={this.accessToken}/>
           <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=http://localhost:8080&response_type=token&scope=public_content">Authorize</a>
