@@ -1,5 +1,5 @@
 /* web styles */
-@media screen and (min-width: 751px) {
+@media screen and (min-width: 770px) {
   .container {
     width: 23vw;
     height: 23vw;
@@ -33,7 +33,7 @@
 }
 
 /* mobile styles */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 769px) {
   .container {
     width: 33.333333%;
     height: 33.333333vw;
