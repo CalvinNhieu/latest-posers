@@ -1,5 +1,5 @@
 /* web styles */
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1000px) {
   .photo_grid {
     margin: 0 auto;
     padding-top: 75px;
@@ -9,7 +9,7 @@
 }
 
 /* mobile styles */
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 999px) {
   .photo_grid {
     padding-top: 70px;
     width: 100%;

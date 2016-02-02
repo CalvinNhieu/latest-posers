@@ -1,5 +1,5 @@
 /* web styles */
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1000px) {
   .sticky_header {
     width: 100%;
     height: 70px;
@@ -23,7 +23,7 @@
 }
 
 /* mobile styles */
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 999px) {
   .sticky_header {
     width: 100%;
     height: 70px;
