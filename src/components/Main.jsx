@@ -13,13 +13,10 @@ export default class Main extends Component {
     this.accessToken = this.retrieveAccessTokenFromUrl();
     this.media = {};
     this.pagination = {};
-    console.log(this.accessToken);
     if (this.accessToken) {
-      console.log('Authorized.');
       this.fetchData();
     } else {
-      // Render link to client-side implicit ig auth
-      console.log('Not authorized.');
+      // console.log('Not authorized.');
     }
   }
 
@@ -41,7 +38,6 @@ export default class Main extends Component {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
-        console.log('fetched data');
         this.media = JSON.parse(xhr.responseText).data;
         Store.dispatch({
           type: 'LOADED',
@@ -59,7 +55,7 @@ export default class Main extends Component {
         <div className={ styles.main }>
           <Header title="Latest Posers"/>
           <PhotoGrid authorized={this.accessToken}/>
-          <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=http://localhost:8080&response_type=token&scope=public_content">Authorize</a>
+          <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=http://calvinnhieu.github.io/latest-posers&response_type=token&scope=public_content">Authorize</a>
         </div>
       </Provider>
     );
