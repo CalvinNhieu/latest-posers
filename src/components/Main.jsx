@@ -50,15 +50,25 @@ export default class Main extends Component {
   }
 
   render() {
-    return (
-      <Provider store={Store}>
+    let view;
+    if (this.accessToken) {
+      view =
+      (<Provider store={Store}>
         <div className={ styles.main }>
           <Header title="Latest Posers"/>
           <PhotoGrid authorized={this.accessToken}/>
+        </div>
+      </Provider>);
+    } else {
+      view =
+      (<Provider store={Store}>
+        <div className={ styles.main }>
+          <Header title="Latest Posers"/>
           <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=http://calvinnhieu.github.io/latest-posers&response_type=token&scope=public_content">Authorize</a>
         </div>
-      </Provider>
-    );
+      </Provider>);
+    }
+    return view;
   }
 
 }
