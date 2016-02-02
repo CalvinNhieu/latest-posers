@@ -35,8 +35,8 @@
 /* mobile styles */
 @media screen and (max-width: 750px) {
   .container {
-    width: 32.3vw;
-    height: 32.3vw;
+    width: 33.333333%;
+    height: 33.333333vw;
     display: inline-block;
 
     .image {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Component from 'Component';
 import _ from 'lodash';
-import styles from './styles/Thumbnail.css';
+import styles from './styles/thumbnail.css';
 
 export default class Thumbnail extends Component {
 
