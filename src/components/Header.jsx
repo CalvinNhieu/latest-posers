@@ -13,6 +13,9 @@ export default class Header extends Component {
     return (
       <div className={ styles.sticky_header }>
         <p className={ styles.header_title }> { this.props.title } </p>
+        <div className={ styles.privacy_policy }>
+          <a href="//www.iubenda.com/privacy-policy/7788950" className="iubenda-black iubenda-embed" title="Privacy Policy">Policy</a>
+        </div>
       </div>
     );
   }

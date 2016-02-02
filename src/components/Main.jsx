@@ -3,6 +3,7 @@ import Component from 'Component';
 import { Provider } from 'react-redux';
 import Store from 'Store';
 import Header from 'Header.jsx';
+import Splash from 'Splash.jsx';
 import PhotoGrid from 'PhotoGrid.jsx';
 import styles from './styles/main.css';
 
@@ -63,9 +64,7 @@ export default class Main extends Component {
       view =
       (<Provider store={Store}>
         <div className={ styles.main }>
-          <Header title="Latest Posers"/>
-          <PhotoGrid authorized={this.accessToken}/>
-          <a href="https://api.instagram.com/oauth/authorize/?client_id=950c6e60f1b24a458f581bcb088e7358&redirect_uri=http://calvinnhieu.github.io/latest-posers&response_type=token&scope=public_content">Authorize</a>
+          <Splash/>
         </div>
       </Provider>);
     }
