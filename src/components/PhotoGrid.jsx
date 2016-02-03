@@ -12,7 +12,7 @@ class PhotoGrid extends Component {
   render() {
     this.key = 0;
     let thumbnails = this.props.imageData.map((data) =>
-      <Thumbnail key={ this.key++ } imgSrc={ data.images.standard_resolution.url } filter={ data.filter } user={ data.user.username } redirect={ data.link }/>
+      <Thumbnail index= { this.key } key={ this.key++ } imgSrc={ data.images.standard_resolution.url } filter={ data.filter } user={ data.user.username } redirect={ data.link }/>
     );
     return (
       <div className={ styles.photo_grid }>

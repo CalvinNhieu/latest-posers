@@ -25,6 +25,11 @@
     position: absolute;
     top: 25px;
     left: 10px;
+    opacity: 0.8;
+  }
+
+  .privacy_policy:hover {
+    opacity: 1;
   }
 }
 
@@ -50,10 +55,15 @@
     font-weight: 100;
     font-size: 1.3em;
   }
-  
+
   .privacy_policy {
     position: absolute;
     top: 25px;
     left: 10px;
+    opacity: 0.8;
+  }
+
+  .privacy_policy:hover {
+    opacity: 1;
   }
 }

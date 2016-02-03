@@ -11,7 +11,7 @@
 /* mobile styles */
 @media screen and (max-width: 768px) {
   .photo_grid {
-    padding-top: 70px;
+    padding-top: 90px;
     width: 100%;
     text-align: left;
   }

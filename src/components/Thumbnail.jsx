@@ -6,6 +6,7 @@ import styles from './styles/thumbnail.css';
 export default class Thumbnail extends Component {
 
   static propTypes = {
+    index: React.PropTypes.number,
     imgSrc: React.PropTypes.string,
     filter: React.PropTypes.string,
     user: React.PropTypes.string,
@@ -14,27 +15,32 @@ export default class Thumbnail extends Component {
 
   constructor(props) {
     super(props);
+    this.overlay = null;
   }
 
   componentDidMount() {
-    _.each(document.getElementsByClassName(styles.overlay), function(element) {
-      element.addEventListener('mouseover', function() {
-        element.style.opacity = 0.7;
-      });
-      element.addEventListener('mouseout', function() {
-        element.style.opacity = 0;
-      });
-    });
+    _.each(document.getElementsByClassName(this.props.index), function(element) {
+      this.overlay = element;
+    }.bind(this));
   }
 
   handleClick() {
     window.open(this.props.redirect, '_blank');
   }
 
+  handleMouseOver() {
+    this.overlay.style.opacity = 0.7;
+  }
+
+  handleMouseOut() {
+    this.overlay.style.opacity = 0;
+  }
+
   render() {
+    let overlayClass = styles.overlay + ' ' + this.props.index;
     return (
       <div className={ styles.container }>
-        <div className={ styles.overlay } onClick={ this.handleClick.bind(this) } >
+        <div className={ overlayClass } onClick={ this.handleClick.bind(this) } onMouseOver={ this.handleMouseOver.bind(this) } onMouseOut={ this.handleMouseOut.bind(this) }>
           <p className={ styles.label }> { this.props.filter.toUpperCase() }<br/><br/>{ this.props.user.toUpperCase() } </p>
         </div>
         <img className={ styles.image } src={ this.props.imgSrc } alt=""/>

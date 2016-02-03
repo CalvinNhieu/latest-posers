@@ -40,6 +40,7 @@ export default class Main extends Component {
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         this.media = JSON.parse(xhr.responseText).data;
+        console.log(this.media);
         Store.dispatch({
           type: 'LOADED',
           data: JSON.parse(xhr.responseText).data

@@ -27,6 +27,11 @@
   font-family: 'Raleway';
   font-weight: 100;
 
+  transition: -webkit-filter 0.5s ease-in-out;
+  transition: -moz-filter 0.5s ease-in-out;
+  transition: -o-filter 0.5s ease-in-out;
+  transition: -ms-filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
   -o-filter: blur(2px);

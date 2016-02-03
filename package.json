@@ -19,6 +19,7 @@
   "homepage": "https://github.com/samiskin/ReactBase",
   "dependencies": {
     "express": "^4.13.3",
+    "file-loader": "^0.8.5",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -28,7 +29,8 @@
     "redux-flux-store": "^0.2.1",
     "redux-logger": "^2.0.4",
     "redux-promise": "^0.5.0",
-    "redux-thunk": "^1.0.0"
+    "redux-thunk": "^1.0.0",
+    "url-loader": "^0.5.7"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",
