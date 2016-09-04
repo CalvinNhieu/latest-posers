@@ -4,8 +4,8 @@ import styles from './styles/splash.css';
 export default class Splash extends Component {
   constructor(props) {
     super(props);
-    let DEV = true;
-    let host = 'http://calvinnhieu.github.io/latest-posers';
+    let DEV = false;
+    let host = 'http://calvinnhieu.github.io/';
     if (DEV) {
       host = 'http://localhost:8080';
     }
