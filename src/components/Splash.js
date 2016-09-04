@@ -1,11 +1,10 @@
-import React from 'react';
-import Component from 'Component';
+import React, { Component } from 'react';
 import styles from './styles/splash.css';
 
 export default class Splash extends Component {
   constructor(props) {
     super(props);
-    let DEV = false;
+    let DEV = true;
     let host = 'http://calvinnhieu.github.io/latest-posers';
     if (DEV) {
       host = 'http://localhost:8080';

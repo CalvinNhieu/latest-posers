@@ -1,17 +1,16 @@
-import React from 'react';
-import {connect} from 'Store';
-import Component from 'Component';
-import Thumbnail from 'Thumbnail.jsx';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Thumbnail from 'Thumbnail';
 import styles from './styles/photo_grid.css';
 
 class PhotoGrid extends Component {
   static propTypes = {
-    imageData: React.PropTypes.array
+    media: React.PropTypes.array
   }
 
   render() {
     this.key = 0;
-    let thumbnails = this.props.imageData.map((data) =>
+    let thumbnails = this.props.media.map((data) =>
       <Thumbnail index= { this.key } key={ this.key++ } imgSrc={ data.images.standard_resolution.url } filter={ data.filter } user={ data.user.username } redirect={ data.link }/>
     );
     return (
@@ -23,5 +22,5 @@ class PhotoGrid extends Component {
 }
 
 export default connect((state) => ({
-  imageData: state
+  media: state.media
 }))(PhotoGrid);
