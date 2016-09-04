@@ -15,10 +15,28 @@ export default class Main extends Component {
     this.media = {};
     this.pagination = {};
     if (this.accessToken) {
-      this.fetchData();
+      // this.fetchData();
+      this.getImageData();
     } else {
       // console.log('Not authorized.');
     }
+  }
+
+  getImageData() {
+    let url = 'https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=' + this.accessToken;
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        Store.dispatch({
+          type: 'LOADED',
+          data: json.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   retrieveAccessTokenFromUrl() {
@@ -27,7 +45,8 @@ export default class Main extends Component {
 
     if (urlFragment.indexOf(tokenIdentifier) >= 0) {
       let tokenIndex = urlFragment.indexOf(tokenIdentifier) + tokenIdentifier.length;
-      return urlFragment.substring(tokenIndex, urlFragment.indexOf('?'));
+      let token = urlFragment.substring(tokenIndex, urlFragment.indexOf('?'));
+      return token;
     }
     return null;
   }
